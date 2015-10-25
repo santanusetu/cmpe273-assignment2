@@ -248,7 +248,7 @@ rw.WriteHeader(400)
 fmt.Fprintf(rw, "%s\n", err)
 } else {
 rw.WriteHeader(200)
-fmt.Fprintf(rw, "Consumer ID=%s has been deleted", param.ByName("id"))
+fmt.Fprintf(rw, "Customer ID=%s is deleted from the database", param.ByName("id"))
 }
 }
 
