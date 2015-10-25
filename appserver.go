@@ -103,7 +103,7 @@ return LocationModel, nil
 
 
 
-// Function to fetch the location of of the customer 
+// Function to fetch the location of the customer 
 func getCoordinates(LocationModel *location) error {
 client := &http.Client{}
 address := LocationModel.Address + "+" + LocationModel.City + "+" + LocationModel.State + "+" + LocationModel.Zip;
@@ -182,7 +182,6 @@ fmt.Fprintf(rw, "%s\n", locationJSON)
 }
 
 
-
 // Function to get location from the json
 func (cc locationController) GetLocation(rw http.ResponseWriter, _ *http.Request, param httprouter.Params) {
 location, err := fetchLocationById(cc, param.ByName("id"))
@@ -205,7 +204,7 @@ fmt.Fprintf(rw, "%s\n", locationJSON)
 
 
 
-// Function to update location 
+// Function to update customer location 
 func (cc locationController) UpdateLocation(rw http.ResponseWriter, req *http.Request, param httprouter.Params) {
 updatedUsr, err := updateConsumerLocation(cc, param.ByName("id"), req.Body)
 if err != nil {
